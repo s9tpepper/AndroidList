@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<components:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+				 creationComplete="view1_creationCompleteHandler(event)"
+				 xmlns:s="library://ns.adobe.com/flex/spark" 
+				 xmlns:components="spark.components.*" 
+				 title="HomeView" 
+				 xmlns:list="ab.mobile.android.flex.components.list.*">
+	<fx:Script>
+		<![CDATA[
+			import ab.mobile.android.flex.components.list.AndroidListEvent;
+			
+			import mx.events.FlexEvent;
+
+			protected function view1_creationCompleteHandler(event:FlexEvent):void
+			{
+				androidList.addEventListener(AndroidListEvent.OPTION_SELECTED, 
+											 _handleAndroidList_optionSelectedEvent,false,0,true);
+			}
+			private function _handleAndroidList_optionSelectedEvent(event:AndroidListEvent):void
+			{
+				trace("event.item = " + event.item);
+				trace("event.selectedOptionItem = " + event.selectedOptionItem);
+			}
+		]]>
+	</fx:Script>
+	<list:AndroidList id="androidList" 
+					  width="100%" height="100%" 
+					  itemOptions="{['Option 1', 'Option 2', 'Option 3','4','5','6','7','8','9','10']}"
+					  enableItemOptions="true">
+		<list:dataProvider>
+			<s:ArrayList>
+				<fx:String>one</fx:String>
+				<fx:String>2</fx:String>
+				<fx:String>3</fx:String>
+				<fx:String>4</fx:String>
+				<fx:String>5</fx:String>
+				<fx:String>6</fx:String>
+				<fx:String>7</fx:String>
+				<fx:String>8</fx:String>
+				<fx:String>9</fx:String>
+				<fx:String>10</fx:String>
+				<fx:String>11</fx:String>
+				<fx:String>12</fx:String>
+				<fx:String>13</fx:String>
+				<fx:String>14</fx:String>
+				<fx:String>15</fx:String>
+				<fx:String>16</fx:String>
+				<fx:String>17</fx:String>
+				<fx:String>18</fx:String>
+				<fx:String>19</fx:String>
+				<fx:String>20</fx:String>
+				<fx:String>21</fx:String>
+				<fx:String>22</fx:String>
+				<fx:String>23</fx:String>
+				<fx:String>24</fx:String>
+			</s:ArrayList>
+		</list:dataProvider>
+	</list:AndroidList>
+</components:View>
